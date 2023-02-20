@@ -16,6 +16,9 @@ Install No-Bling then this so you have pak01_dir.vpk to patch
 
 Click the green code button then click Download ZIP, extract all of its contents to a folder.
 
+### To do list
+- Replaces the name of ward and portrait (icon) to the default ward
+
 ### Credits
 - ChatGPT: lol obviously i cant code
 - Python: for being an easy coding language to interpret
