@@ -14,6 +14,6 @@ Install No-Bling then this so you have pak01_dir.vpk to patch
 ## How to download?
 ![how to download](https://user-images.githubusercontent.com/69560119/219996583-499441ea-ebbb-401d-9b95-ef84fb59b3a3.png)
 
-Click code then click downlod as ZIP
+Click the green code button then click Download ZIP, extract all of its contents to a folder.
 
 ## GOOD LUCK AND HAVE FUN, GOODBYE BS WARDS!
