@@ -8,23 +8,6 @@ import tkinter as tk
 from tkinter import messagebox
 from tkinter import filedialog
 
-ease_of_use = "this folder is here for the sake of ease of use"
-if not os.path.exists(ease_of_use):
-    os.makedirs(ease_of_use)
-logging.basicConfig(filename=os.path.join(ease_of_use, "error.log"), level=logging.ERROR)
-
-def is_dir_empty(path):
-    return not os.listdir(path)
-
-gen_cont = "copy files inside this folder to your modded pak01_dir"
-if os.path.exists(gen_cont):
-    if not is_dir_empty(gen_cont):
-        print(f"> Cleaning previous patched files...")
-        shutil.rmtree(gen_cont)
-        print(f"- Previous patched files removed.")
-if not os.path.exists(gen_cont):
-    os.makedirs(gen_cont)
-
 
 
 script = "DOTA 2 NO BULLSHIT WARD"
@@ -42,12 +25,33 @@ replacement_string = r'"models/props_gameplay/default_ward.vmdl"'
 # Define the regex pattern to search for
 regex_pattern_vmdl = r'"models/items/wards/([^/]+)'
 
+# Folders
+gen_cont = "copy files inside this folder to your modded pak01_dir"
+ease_of_use = "this folder is here for the sake of ease of use"
+
 # Message repetation
 vld1 = "File selected:\npak01_dir.vpk\n\nFile path:\n"
 vld2 = "\n\nClick YES to proceed to extract and patch the items_game.txt\nClick NO to change the path."
 warn = "No file or invalid file is selected!\nPlease select the pak01_dir.vpk\n\nClose the command window if you want to abort the process."
 det1 = "The previous pak01_dir.vpk file is detected in:\n"
 det2 = "\n\nClick YES to proceed.\nClick NO to change the path."
+
+
+
+if not os.path.exists(ease_of_use):
+    os.makedirs(ease_of_use)
+logging.basicConfig(filename=os.path.join(ease_of_use, "error.log"), level=logging.ERROR)
+
+def is_dir_empty(path):
+    return not os.listdir(path)
+
+if os.path.exists(gen_cont):
+    if not is_dir_empty(gen_cont):
+        print(f"> Cleaning previous patched files...")
+        shutil.rmtree(gen_cont)
+        print(f"- Previous patched files removed.")
+if not os.path.exists(gen_cont):
+    os.makedirs(gen_cont)
 
 
 
