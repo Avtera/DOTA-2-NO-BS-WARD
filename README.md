@@ -6,7 +6,7 @@ No Shit, Sherlock! judge by yourself.
 Virus Total: https://www.virustotal.com/gui/file/757ba584b4fba73c0d5235109dd6968d9bd1ca95ff102e6dccc3fe52eacd59f7/detection
 
 ### How to use?
-Just open the file then select your modded pak01_dir.vpk
+Just open the exe or py by your liking, then select your modded pak01_dir.vpk
 
 ### Suggestion?
 Install No-Bling then this so you have pak01_dir.vpk to patch
