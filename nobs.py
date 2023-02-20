@@ -26,6 +26,7 @@ if not os.path.exists(gen_cont):
     os.makedirs(gen_cont)
 
 
+
 script = "DOTA 2 NO BULLSHIT WARD"
 # Get the path to the script file
 script_path = os.path.dirname(os.path.abspath(__file__))
@@ -48,9 +49,10 @@ warn = "No file or invalid file is selected!\nPlease select the pak01_dir.vpk\n\
 det1 = "The previous pak01_dir.vpk file is detected in:\n"
 det2 = "\n\nClick YES to proceed.\nClick NO to change the path."
 
+
+
 root = tk.Tk()
 root.withdraw()
-
 if not os.path.exists(database):
     message = "Welcome to DOTA 2 NO BS WARD PATCHER by Avtera!\n\nThe file pak01_dir.vpk is not found.\nPlease locate the file."
     messagebox.showinfo(script, message)
@@ -116,6 +118,8 @@ else:
                 messagebox.showwarning(script, warn)
                 continue  # loop back to the beginning
 
+
+
 # Read input string from file
 with open(file_path, "r", encoding="utf-8") as f:
     file_contents = f.read()
@@ -156,12 +160,12 @@ if num_replacements <= 0:
     messagebox.showerror(script, message)
     input("Press Enter to exit...")
     exit()
-    
 
 # Set the output directory and filename
 output_dir = os.path.join(gen_cont, "scripts", "items")
 output_file = os.path.join(output_dir, "items_game.txt")
 os.makedirs(output_dir, exist_ok=True)
+
 # Write modified content to output file
 try:
     with open(output_file, "w", encoding="utf-8") as f:
@@ -173,6 +177,8 @@ except Exception as e:
     messagebox.showerror(script, message)
     input("Press Enter to exit...")
     exit()
+
+
 
 # Search for matches in the input string
 try:
@@ -187,8 +193,9 @@ try:
         # Create the destination directory if it doesn't exist
         os.makedirs(dst_dir, exist_ok=True)
         # Copy the file to the destination path
-        shutil.copy(vmdl_path, dst_path)
-        num_copies += 1
+        if is_dir_empty(dst_dir):
+            shutil.copy(vmdl_path, dst_path)
+            num_copies += 1
     print(f"+ Total {num_copies} wards model is succesfully linked!")
 except Exception as e:
     message = f"Error: could not link ward model.\nException message: {str(e)}"
@@ -197,7 +204,9 @@ except Exception as e:
     input("Press Enter to exit...")
     exit()
 
-# Cleaning shit
+
+
+# Cleaning useless cache
 print(f"> Cleaning chaced files...")
 os.remove(file_path)
 print(f"- Cached file removed.")
